@@ -103,12 +103,14 @@ function initBuffers(gl) {
 
   // Now create an array of positions for the square.
 
+  // x from left to right
+  // y from down to up
   var positions = [
-     1.0,  1.0,
-    -1.0,  1.0,
-     1.0, -1.0,
-    -1.0, -1.0,
-  ];
+   -1.0, -1.0,
+   -1.0,  1.0,
+    1.0,  1.0,
+    1.0, -1.0,
+ ];
   const size = [320, 291]
   for (var i=0; i<positions.length; i++) {
     positions[i] *= size[i % 2] * 0.5
@@ -127,37 +129,13 @@ function initBuffers(gl) {
   const textureCoordBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordBuffer);
 
+  // x from left to right
+  // y from up to down
   const textureCoordinates = [
-    // Front
+    0.0,  1.0,
     0.0,  0.0,
     1.0,  0.0,
-    0.0,  1.0,
     1.0,  1.0,
-  //   // Back
-  //   0.0,  0.0,
-  //   1.0,  0.0,
-  //   1.0,  1.0,
-  //   0.0,  1.0,
-  //   // Top
-  //   0.0,  0.0,
-  //   1.0,  0.0,
-  //   1.0,  1.0,
-  //   0.0,  1.0,
-  //   // Bottom
-  //   0.0,  0.0,
-  //   1.0,  0.0,
-  //   1.0,  1.0,
-  //   0.0,  1.0,
-  //   // Right
-  //   0.0,  0.0,
-  //   1.0,  0.0,
-  //   1.0,  1.0,
-  //   0.0,  1.0,
-  //   // Left
-  //   0.0,  0.0,
-  //   1.0,  0.0,
-  //   1.0,  1.0,
-  //   0.0,  1.0,
   ];
 
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates),
@@ -174,13 +152,7 @@ function initBuffers(gl) {
   // position.
 
   const indices = [
-    0,  1,  2,      1,  2,  3,    // front
-    // 0,  1,  2,      0,  2,  3,    // front
-    // 4,  5,  6,      4,  6,  7,    // back
-    // 8,  9,  10,     8,  10, 11,   // top
-    // 12, 13, 14,     12, 14, 15,   // bottom
-    // 16, 17, 18,     16, 18, 19,   // right
-    // 20, 21, 22,     20, 22, 23,   // left
+    0,  1,  2,      0,  2,  3,
   ];
 
   // Now send the element array to GL
