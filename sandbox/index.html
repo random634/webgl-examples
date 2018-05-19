@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="3rd/gl-matrix.js"></script>
+  <script src="core/game.js"></script>
+  <script src="core/node.js"></script>
+  <script src="core/camera.js"></script>
+  <script src="core/sprite.js"></script>
+  <script src="core/material.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    canvas {
+      background: black;
+    }
+  </style>
+  <script>
+    window.addEventListener("load", function () {
+      renderLoop(0, true);
+    });
+
+  </script>
+
+  <script type="vertext_shader" id="vs_01">
+		attribute vec2 a_position;
+		attribute vec2 a_texCoord;
+		
+		varying vec2 v_texCoord;
+		void main(){
+			gl_Position = vec4(a_position, 1, 1);
+			v_texCoord = a_texCoord;
+		}
+	</script>
+
+  <script type="fragment_shader" id="fs_01">
+		precision mediump float;
+		uniform sampler2D u_image;
+		varying vec2 v_texCoord;
+		
+		void main(){
+			gl_FragColor = texture2D(u_image, v_texCoord);
+		}
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>
