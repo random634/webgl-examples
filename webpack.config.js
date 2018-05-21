@@ -34,7 +34,7 @@ var config = {
         test: /\.js$/,
         exclude: [node_dir],
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['es2015']
         }
       }

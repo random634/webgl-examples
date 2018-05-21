@@ -50,7 +50,7 @@ class Game {
     this.canvasElm.width = 800;
     this.canvasElm.height = 600;
 
-    this.gl = this.canvasElm.getContext("webgl2");
+    this.gl = this.canvasElm.getContext("webgl");
     this.gl.clearColor(0.4, 0.6, 1.0, 0.0);
 
     document.body.appendChild(this.canvasElm);
