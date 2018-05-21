@@ -1,0 +1,18 @@
+{
+  "name": "webgl-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sandbox/js/core/game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lingo",
+  "license": "CC0",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^7.1.4",
+    "copy-webpack-plugin": "^4.5.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
