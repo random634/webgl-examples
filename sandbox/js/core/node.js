@@ -5,7 +5,7 @@
 
 class Node {
   constructor(gl) {
-    this.gl = gl
+    this.gl = gl;
 
     // Set the drawing position to the "identity" point, which is
     // the center of the scene.
@@ -45,3 +45,5 @@ class Node {
     mat4.translate(this.modelViewMatrix, this._baseMat4, [x, y, -6.0]);
   }
 }
+
+export default Node;

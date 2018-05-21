@@ -2,6 +2,7 @@
  * 材质
  * @func 提供渲染功能
  */
+
 class Material {
   constructor(gl, vs, fs) {
     this.gl = gl;
@@ -43,3 +44,5 @@ class Material {
     return output;
   }
 }
+
+export default Material;

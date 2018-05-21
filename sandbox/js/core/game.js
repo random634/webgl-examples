@@ -9,6 +9,8 @@ function renderLoop(timeStamp, init = false) {
   requestAnimationFrame(renderLoop);
 }
 
+window.renderLoop = renderLoop;
+
 // Vertex shader program
 const vsSource = `
 attribute vec4 aVertexPos;
@@ -38,6 +40,9 @@ void main() {
   gl_FragColor = texture2D(uSampler, vTextureCoord);
 }
 `;
+
+import Camera from './camera'
+import Sprite from './sprite'
 
 class Game {
   constructor() {

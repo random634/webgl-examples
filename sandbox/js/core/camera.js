@@ -3,9 +3,11 @@
  * @func 设置相机属性（透视相机，正交相机）
  */
 
+import Node from './node.js'
+
 class Camera extends Node {
   constructor(gl) {
-    super(gl)
+    super(gl);
 
     this.projectionMatrix = mat4.create();
 
@@ -38,3 +40,5 @@ class Camera extends Node {
     //                  zFar);
   }
 }
+
+export default Camera;

@@ -3,9 +3,12 @@
  * @func 控制精灵的渲染
  */
 
+import Node from './node'
+import Material from './material'
+ 
 class Sprite extends Node {
   constructor(gl, vs, fs) {
-    super(gl)
+    super(gl);
 
     this.material = new Material(gl, vs, fs);
 
@@ -221,3 +224,5 @@ class Sprite extends Node {
     this._setupTexture(spriteFrame);
   }
 }
+
+export default Sprite;
